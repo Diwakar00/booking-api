@@ -69,8 +69,8 @@ export function filterBookingsByDateRange(
     // Handle null dates (like cancelledDate)
     if (!bookingDate) return false;
 
-    if (from && bookingDate >= from) return false;
-    if (to && bookingDate <= to) return false;
+    if (from && bookingDate < from) return false;
+    if (to && bookingDate > to) return false;
 
     return true;
   });
