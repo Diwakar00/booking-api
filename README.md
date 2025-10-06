@@ -1,61 +1,87 @@
-# Booking API
 
-A NestJS-based booking management API built with TypeScript.
+# Simple Setup
 
-## Prerequisites
+1. Clone the repository:
+	 ```bash
+	 git clone https://github.com/Diwakar00/booking-api.git
+	 cd booking-api
+	 ```
 
-- **Node.js**: Version 21
-- **npm**: Node Package Manager (comes with Node.js)
+2. Install dependencies:
+	 ```bash
+	 npm install
+	 ```
 
-## Setup Instructions
+3. Start the development server:
+	 ```bash
+	 npm run start:dev
+	 ```
 
-Follow these steps to set up and run the booking API locally:
+App will be available at: http://localhost:3000
 
-### 1. Clone the Repository
+# Run with Docker Compose
 
-```bash
-git clone https://github.com/Diwakar00/booking-api.git
-cd booking-api
-```
+## Detailed Docker Setup
 
-### 2. Install Dependencies
+1. **Install Docker Desktop**
+	 - Download and install Docker Desktop from: https://www.docker.com/products/docker-desktop
 
-```bash
-npm i
-```
+2. **Project Structure Requirement**
+	 - Your folder should look like this:
+		 ```
+		 project-root/
+		 ├── booking-ui/      # Frontend repo
+		 ├── booking-api/     # This repo (backend)
+		 └── docker-compose.yml
+		 ```
+	 - Both `booking-ui` and `booking-api` folders must be in the same directory as `docker-compose.yml`.
 
-### 3. Start the Application
+3. **Copy Docker Compose File**
+	 - Make sure the following code is saved in a file named `docker-compose.yml` in the root of your project:
+	 ```yaml
+	 services:
+		 backend:
+			 build:
+				 context: ./booking-api
+			 container_name: booking-backend
+			 ports:
+				 - "3000:3000"
+			 volumes:
+				 - ./booking-api:/app
+				 - /app/node_modules
+			 environment:
+				 - NODE_ENV=development
+			 command: npm run start:dev
+			 restart: unless-stopped
 
-```bash
-npm run start
-```
+		 frontend:
+			 build:
+				 context: ./booking-ui
+			 container_name: booking-frontend
+			 ports:
+				 - "5173:5173"
+			 volumes:
+				 - ./booking-ui:/app
+				 - /app/node_modules
+			 environment:
+				 - NODE_ENV=development
+				 - VITE_API_URL=http://localhost:3000
+			 command: npm run dev -- --host 0.0.0.0
+			 depends_on:
+				 - backend
+			 restart: unless-stopped
+	 ```
 
-The API will be available at `http://localhost:3000`
+4. **Start the Services**
+	 - Open a terminal in the project root (where `docker-compose.yml` is located).
+	 - Run the following command:
+	 ```bash
+	 docker-compose up --build
+	 ```
 
-## Available Scripts
+5. **Access the Applications**
+	 - Frontend: http://localhost:5173
+	 - Backend: http://localhost:3000
 
-- `npm run start` - Start the application
-- `npm run start:dev` - Start in development mode with file watching
-- `npm run start:debug` - Start in debug mode
-- `npm run start:prod` - Start in production mode
-- `npm run build` - Build the application
-- `npm run test` - Run unit tests
-- `npm run test:e2e` - Run end-to-end tests
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-
-## API Endpoints
-
-- `GET /bookings` - Get all bookings
-- `GET /bookings/:id` - Get a specific booking by ID
-- `POST /bookings` - Create a new booking
-- `PUT /bookings/:id` - Update a booking
-- `PUT /bookings/:id/cancel` - Cancel a booking
-- `DELETE /bookings/:id` - Delete a booking
-
-## Technologies Used
-
-- **NestJS** - Progressive Node.js framework
-- **TypeScript** - Type-safe JavaScript
-- **Class Validator** - Validation decorators
-- **Class Transformer** - Object transformation
+6. **Live/Hot Reload**
+	 - Your local code is mounted into the containers for instant updates.
