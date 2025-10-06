@@ -4,7 +4,7 @@ import { Booking } from './types';
 export const bookings: Booking[] = [
   {
     bookingId: '68932965-730e-4de3-b5d1-6d5c6cffe63d',
-    name: 'Customer 1',
+    name: 'John Doe',
     bookingDate: '2025-10-02',
     value: 1,
     arrivalDate: '2025-10-02',
@@ -15,7 +15,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: '3ce161f2-ae68-4fa4-9949-7884db9252e2',
-    name: 'Customer 2',
+    name: 'Jane Smith',
     bookingDate: '2025-10-02',
     value: 12,
     arrivalDate: '2025-10-02',
@@ -26,7 +26,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: '93b61c6f-612e-4289-afab-ec6c6bd7a7b9',
-    name: 'Customer 3',
+    name: 'Alice Johnson',
     bookingDate: '2025-10-02',
     value: 12,
     arrivalDate: '2025-10-02',
@@ -37,7 +37,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: '1676ad99-4512-439b-a3b8-9b72a510679c',
-    name: 'Customer 4',
+    name: 'Bob Williams',
     bookingDate: '2025-10-02',
     value: 12,
     arrivalDate: '2025-10-02',
@@ -48,7 +48,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'd3581461-f954-42b8-b230-248baf43b1a9',
-    name: 'Customer 5',
+    name: 'Charlie Brown',
     bookingDate: '2025-10-02',
     value: 15,
     arrivalDate: '2025-10-15',
@@ -59,7 +59,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: '2fc55834-3415-406b-85fb-1fff3338d63c',
-    name: 'Customer 6',
+    name: 'Diana Evans',
     bookingDate: '2025-10-02',
     value: 15,
     arrivalDate: '2025-10-05',
@@ -70,7 +70,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'a5e1f3e2-2f3b-4d0c-8e7b-5f3e2d9c6a1b',
-    name: 'Customer 7',
+    name: 'Edward King',
     bookingDate: '2025-10-03',
     value: 20,
     arrivalDate: '2025-10-10',
@@ -81,7 +81,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'b7c9e8f4-5d6a-4e2b-9f3c-7d8e9f0a1b2c',
-    name: 'Customer 8',
+    name: 'Fiona Clark',
     bookingDate: '2025-10-03',
     value: 25,
     arrivalDate: '2025-10-08',
@@ -92,7 +92,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'c8d9e0f1-2a3b-4c5d-6e7f-8g9h0i1j2k3l',
-    name: 'Customer 9',
+    name: 'George Lee',
     bookingDate: '2025-10-03',
     value: 30,
     arrivalDate: '2025-10-12',
@@ -103,7 +103,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'd9e0f1a2-3b4c-5d6e-7f8g-9h0i1j2k3l4m',
-    name: 'Customer 10',
+    name: 'Helen Scott',
     bookingDate: '2025-10-03',
     value: 35,
     arrivalDate: '2025-10-18',
@@ -114,7 +114,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'e0f1a2b3-4c5d-6e7f-8g9h-0i1j2k3l4m5n',
-    name: 'Customer 11',
+    name: 'Ian Turner',
     bookingDate: '2025-10-03',
     value: 40,
     arrivalDate: '2025-10-25',
@@ -125,7 +125,7 @@ export const bookings: Booking[] = [
   },
   {
     bookingId: 'f1g2h3i4-5j6k-7l8m-9n0o-1p2q3r4s5t6u',
-    name: 'Customer 12',
+    name: 'Julia Adams',
     bookingDate: '2025-10-03',
     value: 40,
     arrivalDate: '2025-11-01',
